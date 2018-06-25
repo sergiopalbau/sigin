@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+	Remove this if you use the .htaccess -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1.0, target-densitydpi=device-dpi" /><!-- this is for mobile (Android) Chrome -->
+	<meta name="viewport" content="initial-scale=1.0, width=device-height"><!--  mobile Safari, FireFox, Opera Mobile  -->
+	<script src="lib/modernizr.js"></script>
+	<style type="text/css">
+		#signatureparent {
+			  color:darkblue;
+			  background-color:lightgrey;
+			  max-width: 500px;	
+			}
+
+		#signature {
+		 
+		}
+		
+
+	</style>
+	
+
+
+</head>
+<body>
+	<h1>Firma Visita</h1>
+
+	<div id="signatureparent" style="border:solid 1px black">
+		<div id="signature"></div>
+	</div>
+	<div>
+		<br>
+		<button id="clear">Limpìar</button>
+		<button id="captura">captura</button>
+
+	</div>
+	
+	<script src="lib/jquery.js"></script>
+	<script src="src/jSignature.js"></script>
+	<script src="src/plugins/jSignature.CompressorBase30.js"></script>
+	<script src="src/plugins/jSignature.CompressorSVG.js"></script>
+	<script src="src/plugins/jSignature.UndoButton.js"></script> 
+	<!-- <script src="src/plugins/signhere/jSignature.SignHere.js"></script>  -->
+	<script>
+		//incializar el pad
+		$("#signature").jSignature({'height':300, 'width':300});
+		// capturar el boton limpiar y limpiar el canvas
+		$("#clear").click (function(){
+			$("#signature").jSignature("clear");
+		});
+		//capturar en una variable la firma.
+		$("#captura").click (function(){
+			firma = $("#signature").jSignature("getData", "base30");
+			alert(firma);
+		});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title> Sign IN - Registrese </title>
+    <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+<body>
+	<h1>Nuevo registro</h1>
+
+	 <div class="botonera">
+    <br>
+    <input type="text" id="operario" name="operario" placeholder="operario">
+    <br>
+    <input type="text" id="visitante" name="visitante" placeholder="visitante">
+    <br>
+    <input type="text" id="dni" name="dni" placeholder="dni">
+    <br>
+
+    <div class="f_ajust">
+        <label> Fecha </label>
+        <input  class="tiempo" type="date" id="fecha" name="fecha" placeholder="fecha">
+
+    </div>
+
+    <div class="f_ajust">
+        <label   for="">Hora Inicio</label> 
+        <input class="tiempo" type="time" id="hinicio" name="hinicio" placeholder="hinicio">
+        
+    </div>
+
+    <div class="f_ajust">
+        <label for="">Hora Fin</label>
+        <input class="tiempo"  type="time" id="hfin" name="hfin" placeholder="hfin">
+
+    </div>
+
+    <input type="boxtext" id="observaciones" name="observaciones" placeholder="observaciones">
+    <br>
+    <button id='rst'> Resetear</button>
+</div>
+	<script  src="cordova.js"></script>
+</body>
+</html>
