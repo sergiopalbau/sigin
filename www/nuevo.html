@@ -6,6 +6,8 @@
     <title> Sign IN - Registrese </title>
     <link rel="stylesheet" href="css/estilo.css">
 
+    <script src="lib/modernizr.js"></script>
+	
 </head>
 <body>
 	<h1>Nuevo registro</h1>
@@ -38,8 +40,39 @@
     </div>
 
     <input type="boxtext" id="observaciones" name="observaciones" placeholder="observaciones">
-    <br>
-    <button id='rst'> Resetear</button>
+    <br><br>
+	<div id="signatureparent" style="border:solid 1px black">
+		<div id="signature"></div>
+	</div>
+	<div>
+		<br>
+		<button id="clear">Limpìar</button>
+		<button id="captura">captura</button>
+
+	</div>
+	
+	<script src="lib/jquery.js"></script>
+	<script src="src/jSignature.js"></script>
+	<script src="src/plugins/jSignature.CompressorBase30.js"></script>
+	<script src="src/plugins/jSignature.CompressorSVG.js"></script>
+	<script src="src/plugins/jSignature.UndoButton.js"></script> 
+	<!-- <script src="src/plugins/signhere/jSignature.SignHere.js"></script>  -->
+	<script>
+		//incializar el pad
+		$("#signature").jSignature({'height':290, 'width':270});
+		// capturar el boton limpiar y limpiar el canvas
+		$("#clear").click (function(){
+			$("#signature").jSignature("clear");
+		});
+		//capturar en una variable la firma.
+		$("#captura").click (function(){
+			firma = $("#signature").jSignature("getData", "base30");
+			alert(firma);
+		});
+
+</script>
+
+    
 </div>
 	<script  src="cordova.js"></script>
 </body>
